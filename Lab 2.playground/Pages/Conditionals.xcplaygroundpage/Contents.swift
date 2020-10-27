@@ -6,7 +6,7 @@
 print("How's it going?")
 
 // Set your current mood as a String below
-var mood : String = ""
+var mood : String = "Peachy"
 
 /*:
 - experiment:
@@ -15,7 +15,14 @@ If the reply is "Good" print Great!
 Otherwise, if you said "Bad", print Oh no!
 In all other cases, I reply "I see..."
 */
-
+if mood == "Good" {
+    print("great!")
+} else if mood == "Bad" {
+    print("Oh no!")
+} else {
+    print("I see...")
+}
+    
 
 /*:
 ### Combining Conditionals
@@ -37,7 +44,11 @@ Write an if statement that uses a && to compare the mood and the time. You shoul
 If the time  > 7 and mood is Good then print Great!
 */
 var time : Int = 0
-
+if (mood == "Good" && time > 7) {
+    print("Great")
+} else {
+    print("Liar!")
+}
 
 
 /*:
@@ -64,7 +75,9 @@ if pet == "bunny" || pet == "puppy" {
 
  Test your work by setting the values for mood and time to different values.
 */
-
+if mood == "Good" || time >= 17 {
+    print("great")
+}
 
 /*:
 ### Conditionals and Functions
@@ -85,7 +98,10 @@ if pet == "bunny" || pet == "puppy" {
  print(response2) // should be 😀
  ```
 */
-
+func stringToEmoji(word: String) -> String {
+    return word == "happy" ? "😀" : "🤔"
+}
+stringToEmoji(word: "hap")
 
 
 /*:
@@ -102,7 +118,17 @@ otherwise -> "🤔"
 ```
 Test your work by calling the function four times with four different words and print the response. Make sure the response shows each of the four possible emojis.
 */
-
+func stringToEmoji(word: String) -> String {
+    if word == "happy" || word == "laughing"{
+        return word == "happy" ? "😀" : "😆"
+    } else {
+        return word == "cool" ? "😎" : "🤔"
+    }
+}
+stringToEmoji(word: "happy")
+stringToEmoji(word: "laughing")
+stringToEmoji(word: "cool")
+stringToEmoji(word: "bruh")
 
 
 
@@ -121,7 +147,22 @@ But there are a few details that need some work. While the emojis are good, you 
 
  Test your work for all possible words.
 */
-
+func stringToEmoji(word: String) -> String {
+    if word == "happy" || word == "good" || word == "okay" || word == "awesome" || word == "lit" || word == "fun" || word == "laughing"{
+        return word == "happy" || word == "good" || word == "okay" || word == "awesome" || word == "lit" || word == "fun" ? "😀" : "😆"
+    } else {
+        return word == "cool" ? "😎" : "🤔"
+    }
+}
+stringToEmoji(word: "happy")
+stringToEmoji(word: "laughing")
+stringToEmoji(word: "cool")
+stringToEmoji(word: "bruh")
+stringToEmoji(word: "good")
+stringToEmoji(word: "okay")
+stringToEmoji(word: "awesome")
+stringToEmoji(word: "lit")
+stringToEmoji(word: "fun")
 
 
 
